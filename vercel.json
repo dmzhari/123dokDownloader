@@ -1,7 +1,14 @@
 {
-    "name": "123dokDownloader",
-    "version": "1.0.0",
-    "dependencies": {
-        "vercel-php": "^0.7.0"
-    }
+    "version": 2,
+    "functions": {
+        "*.php": {
+            "runtime": "vercel-php@0.7.0",
+            "memory": 1024,
+            "maxDuration": 10
+        }
+    },
+    "routes": [{
+        "src": "/(.*)",
+        "dest": "/$1"
+    }]
 }
