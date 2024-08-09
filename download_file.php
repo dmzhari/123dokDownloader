@@ -1,7 +1,9 @@
 <?php
+error_reporting(0);
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['file_url']) && isset($_POST['file_name'])) {
-    $file_url = $_POST['file_url'];
-    $file_name = $_POST['file_name'];
+    $file_url = htmlspecialchars($_POST['file_url']);
+    $file_name = htmlspecialchars($_POST['file_name']);
 
     $file_content = file_get_contents($file_url);
 

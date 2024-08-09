@@ -1,6 +1,8 @@
 <?php
+error_reporting(0);
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $page_url = $_POST['page_url'];
+    $page_url = htmlspecialchars($_POST['page_url']);
 
     $html_content = file_get_contents($page_url);
 
